@@ -1,0 +1,210 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  // General Ide keymaps
+  {
+    "bindings": {
+      "alt-cmd-q": "workspace::CloseProject",
+    },
+  },
+  {
+    "context": "Editor && VimControl && !menu",
+    "bindings": {
+      "space w q": "workspace::CloseProject",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-/": "workspace::ToggleBottomDock",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-?": "terminal_panel::Toggle",
+      "ctrl-D": "debug_panel::Toggle",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "q": "git_panel::Close",
+    },
+  },
+  // Registers
+  {
+    "context": "Editor && VimControl && !menu",
+    "bindings": {
+      "g \"": "vim::ToggleRegistersView",
+    },
+  },
+  // Popups and its behaviour
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-p": "vim::ScrollUp",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-n": "vim::ScrollDown",
+    },
+  },
+  // File panel (netrw)
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "q": "workspace::ToggleRightDock",
+      "space e": "project_panel::Toggle",
+      ":": "command_palette::Toggle",
+      "/": "project_panel::NewSearchInDirectory",
+      "enter": "project_panel::OpenPermanent",
+      "escape": "project_panel::ToggleFocus",
+      "h": "project_panel::CollapseSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious",
+      "l": "project_panel::ExpandSelectedEntry",
+      "o": "project_panel::OpenPermanent",
+      "shift-d": "project_panel::Delete",
+      "shift-r": "project_panel::Rename",
+      "-": "project_panel::SelectParent",
+    },
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space E": "project_panel::Toggle",
+      "space f n": "workspace::NewFile",
+      "space f p": "projects::OpenRecent",
+      "space s g": "workspace::NewSearch",
+    },
+  },
+  {
+    "context": "(VimControl && !menu) || (!Editor && !Terminal)",
+    "bindings": {
+      "space w l": "workspace::ActivatePaneRight",
+      "space w k": "workspace::ActivatePaneUp",
+      "space w j": "workspace::ActivatePaneDown",
+      "space w h": "workspace::ActivatePaneLeft",
+      "space w a": "pane::CloseAllItems",
+    },
+  },
+  // Inside Terminal
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-w k": "terminal_panel::ToggleFocus",
+    },
+  },
+  // Insert mode
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "k j": "vim::NormalBefore",
+    },
+  },
+  // Normal + Visual (VimControl covers both)
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space f f": "file_finder::Toggle",
+    },
+  },
+  // Normal mode only
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space E": "project_panel::Toggle",
+      "space e": "workspace::ToggleRightDock",
+      "space f n": "workspace::NewFile",
+      "space f p": "projects::OpenRecent",
+      "space s g": "workspace::NewSearch",
+    },
+  },
+  // ── Tab navigation (shift-H / shift-L) ──────────────────────────────────
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "space `": "pane::ActivateLastItem",
+    },
+  },
+  // ── LSP / code actions (LazyVim g-prefixed) ─────────────────────────────
+  // gd, gr, gy, gi already work by default in Zed vim mode.
+  // These fill the gaps:
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "g a": "editor::ToggleCodeActions", // code actions (like <leader>ca in lazyvim)
+      "g shift-r": "editor::FindAllReferences",
+      "g r": "editor::Rename", // rename symbol
+      "space d b": "editor::ToggleBreakpoint",
+      "space c a": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+      "space g b": "git::Blame", // git blame inline
+      "space x x": "diagnostics::Deploy", // open diagnostics list
+    },
+  },
+  // ── Neovim Y = yank to end of line ──────────────────────────────────────
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "shift-y": ["workspace::SendKeystrokes", "y $"],
+    },
+  },
+  // ── Subword motion (camelCase / snake_case aware w/b/e) ──────────────────
+  {
+    "context": "VimControl && !menu && vim_mode != operator",
+    "bindings": {
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd",
+    },
+  },
+  // ── Surround in visual mode (like vim-surround) ──────────────────────────
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds",
+    },
+  },
+  // ── Pane splits (lazyvim <leader>| and <leader>-) ────────────────────────
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "space |": "pane::SplitRight",
+      "space -": "pane::SplitDown",
+      "space q": "pane::CloseActiveItem",
+    },
+  },
+  // -- Unbound Keys ---------------------------------------------------------
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-w": [
+        "editor::DeleteToPreviousWordStart",
+        {
+          "ignore_newlines": false,
+          "ignore_brackets": false,
+        },
+      ],
+    },
+  },
+]
