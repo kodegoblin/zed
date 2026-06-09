@@ -214,7 +214,7 @@
                         "font_weight": null
                     },
                     "constant": {
-                        "color": "#5C869Cff",
+                        "color": "#B0A1FFff",
                         "font_style": null,
                         "font_weight": null
                     },
@@ -244,7 +244,7 @@
                         "font_weight": null
                     },
                     "function": {
-                        "color": "#FFB548ff",
+                        "color": "#FAB041ff",
                         "font_style": null,
                         "font_weight": null
                     },
@@ -254,7 +254,7 @@
                         "font_weight": null
                     },
                     "function.special": {
-                        "color": "#6DA1ABff",
+                        "color": "#2AA4D4ff",
                         "font_style": null,
                         "font_weight": null
                     },
@@ -289,7 +289,7 @@
                         "font_weight": null
                     },
                     "number": {
-                        "color": "#B39DF3ff",
+                        "color": "#B0A1FFff",
                         "font_style": null,
                         "font_weight": null
                     },
@@ -369,7 +369,7 @@
                         "font_weight": null
                     },
                     "string.escape": {
-                        "color": "#8DD0B6ff",
+                        "color": "#F78054ff",
                         "font_style": null,
                         "font_weight": null
                     },
@@ -404,7 +404,7 @@
                         "font_weight": 700
                     },
                     "type": {
-                        "color": "#40BB99ff",
+                        "color": "#3EB0A1ff",
                         "font_style": null,
                         "font_weight": null
                     },
@@ -434,7 +434,7 @@
                         "font_weight": null
                     },
                     "variable.special": {
-                        "color": "#FF8E5Bff",
+                        "color": "#FF974Dff",
                         "font_style": null,
                         "font_weight": null
                     }

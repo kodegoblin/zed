@@ -15,7 +15,11 @@
   "document_folding_ranges": "off",
   "semantic_tokens": "combined",
   "document_symbols": "off",
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
   "colorize_brackets": true,
   "collaboration_panel": {
     "default_width": 320.0,
@@ -123,7 +127,11 @@
   "buffer_font_family": "CaskaydiaCove Nerd Font",
   "ui_font_size": 15.0,
   "buffer_font_size": 14.0,
-  "theme": "Sonokai Custom",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Sonokai Custom"
+  },
   "gutter": {
     "min_line_number_digits": 0,
     "runnables": true,
